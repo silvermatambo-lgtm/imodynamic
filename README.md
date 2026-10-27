@@ -1,3 +1,5 @@
-# IMO Dynamic Solutions
+# IMO Dynamic Solutions (Pty) Ltd
 
-Website source maintained for IMO Dynamic Solutions (Pty) Ltd.
+WebDevPro Ultra Max 6-inspired static demonstration for Vercel. Responsive seven-route website with typewriter hero, animated service cards, real client photos, enquiry forms and WhatsApp assistant. Demo PWA is off. Framework **Other** — no build command. The complete rebranded React/Vite Ultra Max 6 source is available as a separate downloadable source ZIP.
+
+Business phone: 072 642 8629; email: info@imodynamic.co.za. No fake testimonials or false form submission successes.

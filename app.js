@@ -26,11 +26,11 @@ const testimonials=()=>hero('CLIENT FEEDBACK','Testimonials','Only authentic, ap
 const contact=()=>hero('CONTACT IMO DYNAMIC','Request a Quotation','Send your supplier enquiries, RFQs, product lists, labour requests and tender opportunities.')+
 '<section class="section muted"><div class="wrap split" style="align-items:start"><div class="address"><span class="tag">CONTACT DETAILS</span><h2 class="headline">We’re ready to assist.</h2><p class="lead">Reach our team directly about products, equipment, consumables, labour services and procurement.</p><h3>Telephone</h3><p><a href="tel:+27726428629">072 642 8629</a><br/><a href="tel:+27410415079">041 041 5079</a></p><h3>Email</h3><p><a href="mailto:info@imodynamic.co.za">info@imodynamic.co.za</a></p><h3>Physical address</h3><p>12 Yew Street, Sanctor<br/>Gqeberha, 6000</p><h3>Company details</h3><p>Director: Imraan Salie<br/>Registration: 202556216107<br/>CSD: MAAA1627223</p>'+B(wa(),'WhatsApp Enquiry')+'</div><form id="quote" class="contactform"><h2 style="font-size:1.65rem">Request a Quote</h2><p class="note">The completed form opens WhatsApp for review. It does not send automatically.</p><div class="field"><label for="name">Full name *</label><input id="name" name="name" required minlength="2"/></div><div class="field"><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required minlength="8"/></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email"/></div><div class="field"><label for="service">Service *</label><select id="service" name="service" required><option value="">Select service</option>'+S.map(x=>'<option>'+x[1]+'</option>').join('')+'<option>Other enquiry</option></select></div><div class="field"><label for="message">Requirements *</label><textarea name="message" id="message" minlength="5" required placeholder="Products, specifications, quantities or project information"></textarea></div><button class="btn" type="submit" style="width:100%">Review in WhatsApp ↗</button></form></div></section>';
 const pages={'/':home,'/about':about,'/services':servicesPage,'/gallery':galleryPage,'/faq':faqPage,'/testimonials':testimonials,'/contact':contact};
-let cycle,letters,motionObserver,headingObserver;const activeIntervals=new Set();const reducedMotion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cycle,letters,motionObserver,headingObserver,descriptionObserver;const activeIntervals=new Set();const reducedMotion=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function show(){
  pageController.abort();pageController=new AbortController();
- clearInterval(cycle);clearInterval(letters);activeIntervals.forEach(clearInterval);activeIntervals.clear();motionObserver?.disconnect();headingObserver?.disconnect();
+ clearInterval(cycle);clearInterval(letters);activeIntervals.forEach(clearInterval);activeIntervals.clear();motionObserver?.disconnect();headingObserver?.disconnect();descriptionObserver?.disconnect();
  let p=location.pathname.replace(/\/$/,'')||'/';
  let fn=pages[p]||(()=>hero('NOT FOUND','Page not found','Use the navigation to find the right page.')+cta);
  document.querySelector('#root').innerHTML=head()+'<main id="content">'+fn()+'</main>'+footer()+
@@ -62,7 +62,7 @@ function slider(){
  const draw=()=>{
   const bg=document.querySelector('#herobg'), title=document.querySelector('#hh'), highlight=document.querySelector('#hi'), para=document.querySelector('#hp'), kicker=document.querySelector('#hk');
   if(!bg||!title||!highlight||!para||!kicker)return;
-  clearInterval(letters);activeIntervals.forEach(clearInterval);activeIntervals.clear();
+  clearInterval(letters);
   bg.style.backgroundImage='url('+H[i][4]+')';bg.classList.remove('hero-zoom');void bg.offsetWidth;bg.classList.add('hero-zoom');
   kicker.textContent=H[i][2];title.textContent='';highlight.textContent='';para.textContent='';title.setAttribute('aria-label',H[i][0]);highlight.setAttribute('aria-label',H[i][1]);
   dots.querySelectorAll('button').forEach((b,j)=>{b.classList.toggle('active',j===i);b.setAttribute('aria-current',String(i===j))});
@@ -107,7 +107,7 @@ function setupMotion(){
  }),{threshold:.1,rootMargin:'0px 0px 0px 0px'});
  headings.forEach(h=>{const txt=h.textContent.trim();if(!txt)return;h.dataset.original=txt;h.setAttribute('aria-label',txt);const sp=document.createElement('span');sp.className='typed-letters';sp.setAttribute('aria-hidden','true');h.textContent='';h.append(sp);headingObserver.observe(h)});
  const descriptions=[...document.querySelectorAll('.pagehero p, .section .lead, .section .card p, .section .cta p, .section .process-step p, .section .flip-face p')];
- const descriptionObserver=new IntersectionObserver(entries=>entries.forEach(ent=>{if(ent.isIntersecting){ent.target.classList.add('words-active');descriptionObserver.unobserve(ent.target)}}),{threshold:.1});
+ descriptionObserver=new IntersectionObserver(entries=>entries.forEach(ent=>{if(ent.isIntersecting){ent.target.classList.add('words-active');descriptionObserver.unobserve(ent.target)}}),{threshold:.1});
  descriptions.forEach(p=>{if(!p.textContent.trim())return;revealWords(p,p.textContent);descriptionObserver.observe(p)});
  // Animate other blocks with alternating directions and staggered starts as sections enter the viewport
 }

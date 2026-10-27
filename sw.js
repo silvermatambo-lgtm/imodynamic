@@ -1,4 +1,4 @@
-const CACHE='imodynamic-ultramax7-20261027-v1';
+const CACHE='imodynamic-ultramax7-20261027-v2';
 const SHELL=['/','/index.html','/style.css','/app.js','/brand/logo.svg','/offline.html'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('imodynamic-')&&key!==CACHE).map(key=>caches.delete(key)))));self.clients.claim()});

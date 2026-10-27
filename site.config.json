@@ -9,6 +9,9 @@
   "phone": "072 642 8629",
   "alternatePhone": "041 041 5079",
   "email": "info@imodynamic.co.za",
-  "pwaEnabled": false,
-  "photoCount": 11
+  "pwaEnabled": true,
+  "photoCount": 11,
+  "templateVersion": "WebDevPro Ultra Max 7",
+  "animationProfile": "kinetic-diverse",
+  "pwaIcon": "/brand/logo.svg"
 }

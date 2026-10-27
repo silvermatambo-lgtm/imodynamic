@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://imodynamic.vercel.app/sitemap.xml

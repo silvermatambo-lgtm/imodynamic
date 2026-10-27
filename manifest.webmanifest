@@ -1,0 +1,26 @@
+{
+  "id": "/imo-dynamic-solutions",
+  "name": "IMO Dynamic Solutions (Pty) Ltd",
+  "short_name": "IMO Dynamic",
+  "description": "Reliable supply, quality service and trusted solutions",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2515a8",
+  "lang": "en-ZA",
+  "icons": [
+    {
+      "src": "/brand/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

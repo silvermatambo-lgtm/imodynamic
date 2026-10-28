@@ -1,6 +1,6 @@
 {
   "brand": "IMO Dynamic Solutions (Pty) Ltd",
-  "tagline": "Reliable Supply. Quality Service. Trusted Solutions.",
+  "tagline": "Your Requirements, Our Sourcing Solutions.",
   "director": "Imraan Salie",
   "registered": 2025,
   "registration": "202556216107",
@@ -13,5 +13,21 @@
   "photoCount": 11,
   "templateVersion": "WebDevPro Ultra Max 7",
   "animationProfile": "kinetic-diverse",
-  "pwaIcon": "/brand/logo.svg"
+  "pwaIcon": "/brand/logo.svg",
+  "bbbeeLevel": "1 (company-reported; request supporting document)",
+  "serviceCategories": [
+    "Power tools and hardware",
+    "Welding supplies and equipment",
+    "General sourcing and procurement",
+    "Government tender supply",
+    "Automotive spares",
+    "Electrical",
+    "Plumbing",
+    "PPE and safety workwear",
+    "Paint and consumables",
+    "Office and industrial supplies",
+    "Labour supply",
+    "Specialised sourcing"
+  ],
+  "imageryNote": "Existing project gallery remains client-supplied; additional sourcing category photographs are licensed Wikimedia Commons illustrations, not photos of company premises or inventory."
 }

@@ -1,5 +1,5 @@
-const CACHE='imodynamic-ultramax7-20261027-v2';
-const SHELL=['/','/index.html','/style.css','/app.js','/brand/logo.svg','/offline.html'];
+const CACHE='imodynamic-ultramax7-20261028-v3';
+const SHELL=['/','/index.html','/style.css?v=20261028','/app.js?v=20261028','/brand/logo.svg','/offline.html'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('imodynamic-')&&key!==CACHE).map(key=>caches.delete(key)))));self.clients.claim()});
 self.addEventListener('fetch',event=>{
